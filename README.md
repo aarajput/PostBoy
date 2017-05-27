@@ -18,6 +18,11 @@ Postboy postboy  = new Postboy.Builder(this,RequestType.DELETE_FORM_DATA,"https:
 ```
 You need to replace this url with your own.
 
+PostBoy.Builder takes three arguments in its constructor.
+>* <b>Context:</b> You can pass null if you don't have context in it.
+>* <b>Reqest Type:</b>You need to pass Request Type. e.g GET, POST, PUT or DELETE etc.
+>* <b>Link:</b>Http url you webservice you want to call.
+
 To listen to call backs you need to attach listener to postboy object.
 PostBoy.setListener(PostboyListener) method is use to add listener.
 

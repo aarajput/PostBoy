@@ -15,9 +15,9 @@ public class Postboy {
     private final RequestType requestType;
     private PostboyFragment postboyFragment;
 
-    private Postboy(Context context, String link, boolean keepPersistent, RequestType requestType, String tag, int connectionTimeout, int readTimeout) {
+    private Postboy(@Nullable Context context, String link, boolean keepPersistent, RequestType requestType, String tag, int connectionTimeout, int readTimeout) {
         this.requestType = requestType;
-        if (context instanceof AppCompatActivity && keepPersistent)
+        if (context!=null && context instanceof AppCompatActivity && keepPersistent)
         {
             postboyFragment = (PostboyFragment) ((AppCompatActivity)context).getSupportFragmentManager().findFragmentByTag(tag);
             if (postboyFragment==null)
@@ -26,7 +26,7 @@ public class Postboy {
                 ((AppCompatActivity)context).getSupportFragmentManager().beginTransaction().add(postboyFragment,tag).commit();
             }
         }
-        else if (context instanceof Activity && keepPersistent)
+        else if (context!=null && context instanceof Activity && keepPersistent)
             throw new IllegalStateException("Postboy feature does not support Activity for keep persistent. Please use AppCompactActivity or turn off keep persistence feature from PostboyConfig or PostboyBuilder object");
         else
         {
@@ -283,6 +283,7 @@ public class Postboy {
 
 
     public static class Builder {
+        @Nullable
         private Context context;
         private String link;
         private boolean keepPersistent = PostBoyConfig.KEEP_PERSISTENT;
@@ -294,7 +295,7 @@ public class Postboy {
          * @param requestType Type of your request. e.g GET,POST,PUT etc.
          * @param link  link you want to call to get response from server
          */
-        public Builder(@NonNull  Context context, @NonNull RequestType requestType, @NonNull  String link) {
+        public Builder(@Nullable  Context context, @NonNull RequestType requestType, @NonNull  String link) {
             this.link = link;
             this.context = context;
             this.requestType= requestType;
