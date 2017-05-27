@@ -19,25 +19,37 @@ Postboy postboy  = new Postboy.Builder(this,RequestType.DELETE_FORM_DATA,"https:
 You need to replace this url with your own.
 
 PostBoy.Builder takes three arguments in its constructor.
->* <b>Context:</b> You can pass null if you don't have context in it.
->* <b>Reqest Type:</b>You need to pass Request Type. e.g GET, POST, PUT or DELETE etc.
->* <b>Link:</b>Http url you webservice you want to call.
+>* <b>Context:</b> You can pass null if you don't have context.
+>* <b>Reqest Type:</b> You need to pass Request Type. e.g GET, POST, PUT or DELETE etc.
+>* <b>Link:</b> Http URL of your webservice you want to call.
 
 To listen to call backs you need to attach listener to postboy object.
-PostBoy.setListener(PostboyListener) method is use to add listener.
+PostBoy.setListener(PostboyListener) method is use to add listener.<br/>
 
 <b>Example</b><br/>
 ```code
 postboy.setListener(this);
 ```
 
-To call webservice you need to use method PostBoy.call().
+To call webservice you need to use method PostBoy.call().<br/>
+
 <b>Example</b><br/>
 ```code
 postboy.call();
 ```
 
-
+Supported Request Types:
+=
+PostBoy supports followin request types:
+>* RequestType.GET
+>* RequestType.POST_FORM_DATA
+>* RequestType.POST_X_WWW_FORM_URLENCODED
+>* RequestType.PUT_FORM_DATA
+>* RequestType.PUT_X_WWW_FORM_URLENCODED
+>* RequestType.PATCH_FORM_DATA
+>* RequestType.PATCH_X_WWW_FORM_URLENCODED
+>* RequestType.DELETE_FORM_DATA
+>* RequestType.DELETE_X_WWW_FORM_URLENCODED
 
 
 License
