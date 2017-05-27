@@ -6,7 +6,7 @@ HTTP client for Android.
 Download
 --------
 
-Download [the latest JAR][2] or grab via Maven:
+Clone repository and import module: postboy into your project.
 
 License
 =======
