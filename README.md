@@ -41,15 +41,15 @@ postboy.call();
 Supported Request Types:
 -
 PostBoy supports followin request types:
->* RequestType.GET
->* RequestType.POST_FORM_DATA
->* RequestType.POST_X_WWW_FORM_URLENCODED
->* RequestType.PUT_FORM_DATA
->* RequestType.PUT_X_WWW_FORM_URLENCODED
->* RequestType.PATCH_FORM_DATA
->* RequestType.PATCH_X_WWW_FORM_URLENCODED
->* RequestType.DELETE_FORM_DATA
->* RequestType.DELETE_X_WWW_FORM_URLENCODED
+* RequestType.GET
+* RequestType.POST_FORM_DATA
+* RequestType.POST_X_WWW_FORM_URLENCODED
+* RequestType.PUT_FORM_DATA
+* RequestType.PUT_X_WWW_FORM_URLENCODED
+* RequestType.PATCH_FORM_DATA
+* RequestType.PATCH_X_WWW_FORM_URLENCODED
+* RequestType.DELETE_FORM_DATA
+* RequestType.DELETE_X_WWW_FORM_URLENCODED
 
 Add Key and its Values:
 -
