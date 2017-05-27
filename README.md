@@ -19,9 +19,9 @@ Postboy postboy  = new Postboy.Builder(this,RequestType.DELETE_FORM_DATA,"https:
 You need to replace this url with your own.
 
 PostBoy.Builder takes three arguments in its constructor.
->* <b>Context:</b> You can pass null if you don't have context.
->* <b>Reqest Type:</b> You need to pass Request Type. e.g GET, POST, PUT or DELETE etc.
->* <b>Link:</b> Http URL of your webservice you want to call.
+* <b>Context:</b> You can pass null if you don't have context.
+* <b>Reqest Type:</b> You need to pass Request Type. e.g GET, POST, PUT or DELETE etc.
+* <b>Link:</b> Http URL of your webservice you want to call.
 
 To listen to call backs you need to attach listener to postboy object.
 PostBoy.setListener(PostboyListener) method is use to add listener.<br/>
@@ -56,18 +56,18 @@ Add Key and its Values:
 To add GET,POST,PUT,PATCH,DELETE key and values you can use following methods:
 
 <b>GET:</b>
->* PostBoy.setGETValues(@Nullable HashMap<String, String> keyValue)
->* PostBoy.addGETValue(@NonNull String key,@NonNull String value)
+* PostBoy.setGETValues(@Nullable HashMap<String, String> keyValue)
+* PostBoy.addGETValue(@NonNull String key,@NonNull String value)
 
 <b>POST, PUT, PATCH, DELETE:</b>
->* PostBoy.setPOSTValues(@Nullable HashMap<String, String> keyValue)
->* PostBoy.addPOSTValue(@NonNull String key,@NonNull String value)
+* PostBoy.setPOSTValues(@Nullable HashMap<String, String> keyValue)
+* PostBoy.addPOSTValue(@NonNull String key,@NonNull String value)
 
 Add Files:
 -
 To add files you can use following methods:
->* PostBoy.setFiles(@Nullable  HashMap<String, File> keyFiles)
->* PostBoy.addFile(@NonNull  String key,@NonNull  File file)
+* PostBoy.setFiles(@Nullable  HashMap<String, File> keyFiles)
+* PostBoy.addFile(@NonNull  String key,@NonNull  File file)
 
 > <b>Note:</b> Never use these methods with GET or X_WWW_FORM_URLENCODED request types
 
