@@ -39,7 +39,7 @@ postboy.call();
 ```
 
 Supported Request Types:
-=
+-
 PostBoy supports followin request types:
 >* RequestType.GET
 >* RequestType.POST_FORM_DATA
