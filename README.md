@@ -74,6 +74,15 @@ To add files you can use following methods:
 
 > <b>Note:</b> Never use these file methods with GET or X_WWW_FORM_URLENCODED request types
 
+Add Headers:
+-
+To add headers you can use following methods:
+* PostBoy.setHeader(@Nullable  HashMap<String, String> keyHeaders)
+<br/>or
+* PostBoy.addHeader(@NonNull  String key,@NonNull  String value)
+
+> <b>Note:</b> Never use these file methods with GET or X_WWW_FORM_URLENCODED request types
+
 Handle Screen Orientation:
 -
 If you pass instance of AppCompactActivity to PostBoy.Builder constructor, then it will get attached to that activity and it will retain its instance and it will not get destroyed after you change screen orientation.
