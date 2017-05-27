@@ -77,12 +77,26 @@ To add files you can use following methods:
 Handle Screen Orientation:
 -
 If you pass instance of AppCompactActivity to PostBoy.Builder constructor, then it will get attached to that activity and it will retain its instance and it will not get destroyed after you change screen orientation.
-So, if you call PostBoy.Builder constructor, after screen orientation change, with same HTTP URL, it will return same object and if connection calling is in progress, PostBoy.call() method will return false until its connection request is completed of failed.
+So, if you call PostBoy.Builder constructor, after screen orientation change, with same HTTP URL, it will return same object and if connection calling is in progress, PostBoy.call() method will return false until its connection request is completed or failed.
 
 This feature is ON by default. You can turn this feature OFF by calling method:
 ```code
  PostBoy.Builder.setKeepPersistent(boolean keepPersistent)
  ```
+ 
+ PostBoy Default Settings:
+ -
+ You can use Class PostBoyConfig to set default values of PostBoy.
+ <br/><b>Example</b>
+ ```code
+         PostBoyConfig postBoyConfig = new PostBoyConfig()
+                 .setDefaultConnectionTimeout(1500)
+                 .setDefaultReadTimeout(1500)
+                 .setDefaultKeepPersistent(false);
+         Postboy.setDefaultConfigs(postBoyConfig);
+
+ ```
+> <b>Note:</b> It is better approach to set PostBoy's default settings in Application.onCreate method.
 
 License
 =======

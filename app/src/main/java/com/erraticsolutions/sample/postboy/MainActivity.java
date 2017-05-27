@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.erraticsolutions.postboy.PostBoyConfig;
 import com.erraticsolutions.postboy.Postboy;
 import com.erraticsolutions.postboy.PostboyException;
 import com.erraticsolutions.postboy.PostboyListener;
@@ -17,10 +18,17 @@ public class MainActivity extends AppCompatActivity implements PostboyListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        PostBoyConfig postBoyConfig = new PostBoyConfig()
+                .setDefaultConnectionTimeout(1500)
+                .setDefaultReadTimeout(1500)
+                .setDefaultKeepPersistent(false);
+        Postboy.setDefaultConfigs(postBoyConfig);
+
         Postboy postboy  = new Postboy.Builder(this,RequestType.DELETE_FORM_DATA,"https://jsonplaceholder.typicode.com/posts/1")
                 .create();
         postboy.setListener(this);
         postboy.call();
+
     }
 
     @Override
