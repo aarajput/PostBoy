@@ -12,11 +12,11 @@ import java.io.File;
 import java.net.HttpURLConnection;
 import java.util.HashMap;
 
-public class PostboyFragment extends Fragment{
-    private static final String TAG = "PostboyFragment";
+public class PostBoyFragment extends Fragment{
+    private static final String TAG = "PostBoyFragment";
 
     @Nullable
-    PostboyListener listener;
+    PostBoyListener listener;
     String link;
     RequestType requestType;
     int connectionTimeout, readTimeout;
@@ -126,7 +126,7 @@ public class PostboyFragment extends Fragment{
                 public void run() {
                     try {
                         listener.onPostboyConnecting();
-                    } catch (PostboyException e) {
+                    } catch (PostBoyException e) {
                         listener.onPostboyError(e);
                     }
                 }
@@ -139,7 +139,7 @@ public class PostboyFragment extends Fragment{
         if (listener!=null) {
             try {
                 listener.onPostboyAsyncConnected(json,responseCode);
-            } catch (PostboyException e) {
+            } catch (PostBoyException e) {
                 listener.onPostboyError(e);
             }
         }
@@ -152,7 +152,7 @@ public class PostboyFragment extends Fragment{
                 public void run() {
                     try {
                         listener.onPostboyConnected(json,responseCode);
-                    } catch (PostboyException e) {
+                    } catch (PostBoyException e) {
                         listener.onPostboyError(e);
                     }
                 }
@@ -168,7 +168,7 @@ public class PostboyFragment extends Fragment{
                 public void run() {
                     try {
                         listener.onPostboyConnectionFailure();
-                    } catch (PostboyException e) {
+                    } catch (PostBoyException e) {
                         listener.onPostboyError(e);
                     }
                 }

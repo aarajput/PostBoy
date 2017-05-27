@@ -4,13 +4,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.erraticsolutions.postboy.Postboy;
-import com.erraticsolutions.postboy.PostboyException;
-import com.erraticsolutions.postboy.PostboyHeaders;
-import com.erraticsolutions.postboy.PostboyListener;
+import com.erraticsolutions.postboy.PostBoy;
+import com.erraticsolutions.postboy.PostBoyException;
+import com.erraticsolutions.postboy.PostBoyHeaders;
+import com.erraticsolutions.postboy.PostBoyListener;
 import com.erraticsolutions.postboy.RequestType;
 
-public class MainActivity extends AppCompatActivity implements PostboyListener {
+public class MainActivity extends AppCompatActivity implements PostBoyListener {
 
     private static final String TAG = "MainActivity";
 
@@ -19,38 +19,38 @@ public class MainActivity extends AppCompatActivity implements PostboyListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Postboy postboy  = new Postboy.Builder(this,RequestType.DELETE_FORM_DATA,"https://jsonplaceholder.typicode.com/posts/1")
+        PostBoy postBoy = new PostBoy.Builder(this,RequestType.DELETE_FORM_DATA,"https://jsonplaceholder.typicode.com/posts/1")
                 .create();
-        postboy.setListener(this);
-        postboy.addGETValue("name","postboy");
-        postboy.addPOSTValue("age","1");
-        postboy.addHeader(PostboyHeaders.KEY_AUTHORIZATION,"bearer: 13546");
-        postboy.call();
+        postBoy.setListener(this);
+        postBoy.addGETValue("name","postBoy");
+        postBoy.addPOSTValue("age","1");
+        postBoy.addHeader(PostBoyHeaders.KEY_AUTHORIZATION,"bearer: 13546");
+        postBoy.call();
 
     }
 
     @Override
-    public void onPostboyConnecting() throws PostboyException {
+    public void onPostboyConnecting() throws PostBoyException {
         Log.e(TAG,"onPostboyConnecting");
     }
 
     @Override
-    public void onPostboyAsyncConnected(String json, int responseCode) throws PostboyException {
+    public void onPostboyAsyncConnected(String json, int responseCode) throws PostBoyException {
         Log.e(TAG,"onPostboyAsyncConnected: " + responseCode+ " || " + json);
     }
 
     @Override
-    public void onPostboyConnected(String json, int responseCode) throws PostboyException {
+    public void onPostboyConnected(String json, int responseCode) throws PostBoyException {
         Log.e(TAG,"onPostboyConnected: " + responseCode+ " || " + json);
     }
 
     @Override
-    public void onPostboyConnectionFailure() throws PostboyException {
+    public void onPostboyConnectionFailure() throws PostBoyException {
         Log.e(TAG,"onPostboyConnectionFailure");
     }
 
     @Override
-    public void onPostboyError(PostboyException e) {
+    public void onPostboyError(PostBoyException e) {
         Log.e(TAG,"onPostboyError: " + e.toString());
     }
 }

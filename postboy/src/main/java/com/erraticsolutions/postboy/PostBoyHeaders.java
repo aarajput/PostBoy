@@ -1,6 +1,6 @@
 package com.erraticsolutions.postboy;
 
-public class PostboyHeaders {
+public class PostBoyHeaders {
     public static final String KEY_ACCEPT = "Accept";
     public static final String KEY_ACCEPT_LANGUAGE = "Accept-Language";
     public static final String KEY_AUTHORIZATION = "Authorization";
