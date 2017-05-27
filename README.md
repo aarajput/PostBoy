@@ -51,6 +51,19 @@ PostBoy supports followin request types:
 >* RequestType.DELETE_FORM_DATA
 >* RequestType.DELETE_X_WWW_FORM_URLENCODED
 
+Add Key and its Values:
+-
+To add GET,POST,PUT,PATCH,DELETE key and values you can use following methods:
+
+<b>GET:</b>
+>* PostBoy.setGETValues(@Nullable HashMap<String, String> keyValue)
+>* PostBoy.addGETValue(@NonNull String key,@NonNull String value)
+
+<b>POST, PUT, PATCH, DELETE:</b>
+>* PostBoy.setPOSTValues(@Nullable HashMap<String, String> keyValue)
+>* PostBoy.addPOSTValue(@NonNull String key,@NonNull String value)
+
+
 
 License
 =======
