@@ -84,7 +84,7 @@ This feature is ON by default. You can turn this feature OFF by calling method:
  PostBoy.Builder.setKeepPersistent(boolean keepPersistent)
  ```
  
- PostBoy Default Settings:
+ PostBoy Default Settings (Optional):
  -
  You can use Class PostBoyConfig to set default values of PostBoy.
  <br/><b>Example</b>
