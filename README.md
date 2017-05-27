@@ -63,7 +63,13 @@ To add GET,POST,PUT,PATCH,DELETE key and values you can use following methods:
 >* PostBoy.setPOSTValues(@Nullable HashMap<String, String> keyValue)
 >* PostBoy.addPOSTValue(@NonNull String key,@NonNull String value)
 
+Add Files:
+-
+To add files you can use following methods:
+>* PostBoy.setFiles(@Nullable  HashMap<String, File> keyFiles)
+>* PostBoy.addFile(@NonNull  String key,@NonNull  File file)
 
+> <b>Note:</b> Never use these methods with GET or X_WWW_FORM_URLENCODED request types
 
 License
 =======
