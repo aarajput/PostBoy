@@ -27,7 +27,7 @@ public class PostBoy {
             }
         }
         else if (context!=null && context instanceof Activity && keepPersistent)
-            throw new IllegalStateException("PostBoy feature does not support Activity for keep persistent. Please use AppCompactActivity or turn off keep persistence feature from PostboyConfig or PostboyBuilder object");
+            throw new IllegalStateException("PostBoy feature does not support Activity for keep persistent. Please use AppCompactActivity or turn off keep persistence feature from PostBoyConfig or PostBoyBuilder object");
         else
         {
             postBoyFragment = getNewPostFragment(link, requestType, connectionTimeout, readTimeout);

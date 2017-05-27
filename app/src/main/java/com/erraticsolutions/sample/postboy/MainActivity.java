@@ -30,27 +30,27 @@ public class MainActivity extends AppCompatActivity implements PostBoyListener {
     }
 
     @Override
-    public void onPostboyConnecting() throws PostBoyException {
-        Log.e(TAG,"onPostboyConnecting");
+    public void onPostBoyConnecting() throws PostBoyException {
+        Log.e(TAG,"onPostBoyConnecting");
     }
 
     @Override
-    public void onPostboyAsyncConnected(String json, int responseCode) throws PostBoyException {
-        Log.e(TAG,"onPostboyAsyncConnected: " + responseCode+ " || " + json);
+    public void onPostBoyAsyncConnected(String json, int responseCode) throws PostBoyException {
+        Log.e(TAG,"onPostBoyAsyncConnected: " + responseCode+ " || " + json);
     }
 
     @Override
-    public void onPostboyConnected(String json, int responseCode) throws PostBoyException {
-        Log.e(TAG,"onPostboyConnected: " + responseCode+ " || " + json);
+    public void onPostBoyConnected(String json, int responseCode) throws PostBoyException {
+        Log.e(TAG,"onPostBoyConnected: " + responseCode+ " || " + json);
     }
 
     @Override
-    public void onPostboyConnectionFailure() throws PostBoyException {
-        Log.e(TAG,"onPostboyConnectionFailure");
+    public void onPostBoyConnectionFailure() throws PostBoyException {
+        Log.e(TAG,"onPostBoyConnectionFailure");
     }
 
     @Override
-    public void onPostboyError(PostBoyException e) {
-        Log.e(TAG,"onPostboyError: " + e.toString());
+    public void onPostBoyError(PostBoyException e) {
+        Log.e(TAG,"onPostBoyError: " + e.toString());
     }
 }

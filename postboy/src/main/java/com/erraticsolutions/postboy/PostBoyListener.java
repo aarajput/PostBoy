@@ -10,7 +10,7 @@ public interface PostBoyListener {
      * @throws PostBoyException  Handle exceptions instead of crashing application
      */
     @UiThread
-    void onPostboyConnecting() throws PostBoyException;
+    void onPostBoyConnecting() throws PostBoyException;
 
 
     /**
@@ -20,28 +20,28 @@ public interface PostBoyListener {
      * @throws PostBoyException Handle exceptions instead of crashing application
      */
     @WorkerThread
-    void onPostboyAsyncConnected(String json, int responseCode) throws PostBoyException;
+    void onPostBoyAsyncConnected(String json, int responseCode) throws PostBoyException;
 
     /**
-     * It is called on UIThread. It will be called after you are done with processing in  onPostboyAsyncConnected method.
+     * It is called on UIThread. It will be called after you are done with processing in  onPostBoyAsyncConnected method.
      * @param json Response from server
      * @param responseCode Response code from server
      * @throws PostBoyException  Handle exceptions instead of crashing application
      */
     @UiThread
-    void onPostboyConnected(String json, int responseCode) throws PostBoyException;
+    void onPostBoyConnected(String json, int responseCode) throws PostBoyException;
 
     /**
      * It is called when you connection with server is failed.
      * @throws PostBoyException Handle exceptions instead of crashing application
      */
     @UiThread
-    void onPostboyConnectionFailure() throws PostBoyException;
+    void onPostBoyConnectionFailure() throws PostBoyException;
 
     /**
-     * It is called whenever any of the methods onPostboyConnecting,  onPostboyAsyncConnected, onPostboyConnected and onPostboyConnectionFailure throws exception.
-     * @param e Exception thrown by any of these methods: onPostboyConnecting,  onPostboyAsyncConnected, onPostboyConnected and onPostboyConnectionFailure.
+     * It is called whenever any of the methods onPostBoyConnecting,  onPostBoyAsyncConnected, onPostBoyConnected and onPostBoyConnectionFailure throws exception.
+     * @param e Exception thrown by any of these methods: onPostBoyConnecting,  onPostBoyAsyncConnected, onPostBoyConnected and onPostBoyConnectionFailure.
      */
     @UiThread
-    void onPostboyError(PostBoyException e);
+    void onPostBoyError(PostBoyException e);
 }

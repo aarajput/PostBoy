@@ -6,14 +6,14 @@ HTTP client for Android.
 Download
 --------
 
-Clone repository and import module: postboy into your project.
+Clone repository and import module: postBoy into your project.
 
 Use
 ------
 You need to create object of class PostBoy using its Builder class in order to call webservices.<br/>
 <b>Example</b><br/>
 ```code
-Postboy postboy  = new Postboy.Builder(this,RequestType.DELETE_FORM_DATA,"https://jsonplaceholder.typicode.com/posts/1")
+PostBoy postBoy  = new PostBoy.Builder(this,RequestType.DELETE_FORM_DATA,"https://jsonplaceholder.typicode.com/posts/1")
                 .create();
 ```
 You need to replace this url with your own.
@@ -23,19 +23,19 @@ PostBoy.Builder takes three arguments in its constructor.
 * <b>Reqest Type:</b> You need to pass Request Type. e.g GET, POST, PUT or DELETE etc.
 * <b>Link:</b> Http URL of your webservice you want to call.
 
-To listen to call backs you need to attach listener to postboy object.
-PostBoy.setListener(PostboyListener) method is use to add listener.<br/>
+To listen to call backs you need to attach listener to postBoy object.
+PostBoy.setListener(PostBoyListener) method is use to add listener.<br/>
 
 <b>Example</b><br/>
 ```code
-postboy.setListener(this);
+postBoy.setListener(this);
 ```
 
 To call webservice you need to use method PostBoy.call().<br/>
 
 <b>Example</b><br/>
 ```code
-postboy.call();
+postBoy.call();
 ```
 
 Supported Request Types:
@@ -102,7 +102,7 @@ This feature is ON by default. You can turn this feature OFF by calling method:
                  .setDefaultConnectionTimeout(1500)
                  .setDefaultReadTimeout(1500)
                  .setDefaultKeepPersistent(false);
-         Postboy.setDefaultConfigs(postBoyConfig);
+         PostBoy.setDefaultConfigs(postBoyConfig);
 
  ```
 > <b>Note:</b> It is better approach to set PostBoy's default settings in Application.onCreate method.

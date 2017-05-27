@@ -125,9 +125,9 @@ public class PostBoyFragment extends Fragment{
                 @Override
                 public void run() {
                     try {
-                        listener.onPostboyConnecting();
+                        listener.onPostBoyConnecting();
                     } catch (PostBoyException e) {
-                        listener.onPostboyError(e);
+                        listener.onPostBoyError(e);
                     }
                 }
             });
@@ -138,9 +138,9 @@ public class PostBoyFragment extends Fragment{
     {
         if (listener!=null) {
             try {
-                listener.onPostboyAsyncConnected(json,responseCode);
+                listener.onPostBoyAsyncConnected(json,responseCode);
             } catch (PostBoyException e) {
-                listener.onPostboyError(e);
+                listener.onPostBoyError(e);
             }
         }
     }
@@ -151,9 +151,9 @@ public class PostBoyFragment extends Fragment{
                 @Override
                 public void run() {
                     try {
-                        listener.onPostboyConnected(json,responseCode);
+                        listener.onPostBoyConnected(json,responseCode);
                     } catch (PostBoyException e) {
-                        listener.onPostboyError(e);
+                        listener.onPostBoyError(e);
                     }
                 }
             });
@@ -167,9 +167,9 @@ public class PostBoyFragment extends Fragment{
                 @Override
                 public void run() {
                     try {
-                        listener.onPostboyConnectionFailure();
+                        listener.onPostBoyConnectionFailure();
                     } catch (PostBoyException e) {
-                        listener.onPostboyError(e);
+                        listener.onPostBoyError(e);
                     }
                 }
             });
