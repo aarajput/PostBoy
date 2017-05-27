@@ -10,7 +10,7 @@ Clone repository and import module: postboy into your project.
 
 Use
 ------
-You need to create object of class PostBoy using its build class in order to call webservices.<br/>
+You need to create object of class PostBoy using its Builder class in order to call webservices.<br/>
 <b>Example</b><br/>
 ```code
 Postboy postboy  = new Postboy.Builder(this,RequestType.DELETE_FORM_DATA,"https://jsonplaceholder.typicode.com/posts/1")
@@ -57,19 +57,22 @@ To add GET,POST,PUT,PATCH,DELETE key and values you can use following methods:
 
 <b>GET:</b>
 * PostBoy.setGETValues(@Nullable HashMap<String, String> keyValue)
+<br/>or
 * PostBoy.addGETValue(@NonNull String key,@NonNull String value)
 
 <b>POST, PUT, PATCH, DELETE:</b>
 * PostBoy.setPOSTValues(@Nullable HashMap<String, String> keyValue)
+<br/>or
 * PostBoy.addPOSTValue(@NonNull String key,@NonNull String value)
 
 Add Files:
 -
 To add files you can use following methods:
 * PostBoy.setFiles(@Nullable  HashMap<String, File> keyFiles)
+<br/>or
 * PostBoy.addFile(@NonNull  String key,@NonNull  File file)
 
-> <b>Note:</b> Never use these methods with GET or X_WWW_FORM_URLENCODED request types
+> <b>Note:</b> Never use these file methods with GET or X_WWW_FORM_URLENCODED request types
 
 License
 =======
