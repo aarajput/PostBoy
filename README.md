@@ -6,7 +6,7 @@ HTTP client for Android.
 Download
 --------
 
-Clone repository and import module: postBoy into your project.
+Clone repository and import module: postboy into your project.
 
 Use
 ------
@@ -20,7 +20,7 @@ You need to replace this url with your own.
 
 PostBoy.Builder takes three arguments in its constructor.
 * <b>Context:</b> You can pass null if you don't have context.
-* <b>Reqest Type:</b> You need to pass Request Type. e.g GET, POST, PUT or DELETE etc.
+* <b>Request Type:</b> You need to pass Request Type. e.g GET, POST, PUT or DELETE etc.
 * <b>Link:</b> Http URL of your webservice you want to call.
 
 To listen to call backs you need to attach listener to postBoy object.
@@ -40,7 +40,7 @@ postBoy.call();
 
 Supported Request Types:
 -
-PostBoy supports followin request types:
+PostBoy supports following request types:
 * RequestType.GET
 * RequestType.POST_FORM_DATA
 * RequestType.POST_X_WWW_FORM_URLENCODED
