@@ -10,7 +10,7 @@ import android.util.Log;
 
 import java.io.File;
 import java.net.HttpURLConnection;
-import java.util.HashMap;
+import java.util.Map;
 
 public class PostBoyFragment extends Fragment{
     private static final String TAG = "PostBoyFragment";
@@ -23,13 +23,13 @@ public class PostBoyFragment extends Fragment{
 
 
     @Nullable
-    HashMap<String,File> mapFiles=null;
+    Map<String,File> mapFiles=null;
     @Nullable
-    HashMap<String , String> mapHeaders=null;
+    Map<String , String> mapHeaders=null;
     @Nullable
-    HashMap<String , String> mapPost=null;
+    Map<String , String> mapPost=null;
     @Nullable
-    HashMap<String , String> mapGet=null;
+    Map<String , String> mapGet=null;
     private boolean connectionInProgress;
 
     @Override

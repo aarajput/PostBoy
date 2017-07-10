@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.Map;
 
 public class PostBoy {
 
@@ -67,14 +68,14 @@ public class PostBoy {
      * @return  returns all keys and values that are set for sending to server using GET.
      */
     @Nullable
-    public HashMap<String, String> getGETValues() {
+    public Map<String, String> getGETValues() {
         return postBoyFragment.mapGet;
     }
 
     /**
      * @param mapGet set all GET keys and values that will be sent to server using get method;
      */
-    public void setGETValues(@Nullable HashMap<String, String> mapGet) {
+    public void setGETValues(@Nullable Map<String, String> mapGet) {
         postBoyFragment.mapGet = mapGet;
     }
 
@@ -111,14 +112,14 @@ public class PostBoy {
      * @return  returns all keys and values that are set for sending to server using POST.
      */
     @Nullable
-    public HashMap<String, String> getPOSTValues() {
+    public Map<String, String> getPOSTValues() {
         return postBoyFragment.mapPost;
     }
 
     /**
      * @param mapPost set all post keys and values that will be sent to server using post method;
      */
-    public void setPOSTValues(@Nullable HashMap<String, String> mapPost) {
+    public void setPOSTValues(@Nullable Map<String, String> mapPost) {
         if (requestType.equals(RequestType.GET))
             throw new IllegalArgumentException("You can't set post values when RequestType is RequestType.TYPE_GET");
         postBoyFragment.mapPost = mapPost;
@@ -162,14 +163,14 @@ public class PostBoy {
      * @return  returns all keys and values that are set for sending to server using Header.
      */
     @Nullable
-    public HashMap<String, String> getHeader() {
+    public Map<String, String> getHeader() {
         return postBoyFragment.mapHeaders;
     }
 
     /**
      * @param mapHeaders set all header keys and values that will be sent to server in Header;
      */
-    public void setHeader(@Nullable  HashMap<String, String> mapHeaders) {
+    public void setHeader(@Nullable  Map<String, String> mapHeaders) {
         postBoyFragment.mapHeaders = mapHeaders;
     }
 
@@ -207,14 +208,14 @@ public class PostBoy {
      * @return  returns all keys and file objects that are set for sending to server using multipart.
      */
     @Nullable
-    public HashMap<String, File> getFiles() {
+    public Map<String, File> getFiles() {
         return postBoyFragment.mapFiles;
     }
 
     /**
      * @param mapFiles set all files keys and file objects that will be sent to server using post method;
      */
-    public void setFiles(@Nullable  HashMap<String, File> mapFiles) {
+    public void setFiles(@Nullable  Map<String, File> mapFiles) {
         if (requestType.equals(RequestType.GET))
             throw new IllegalArgumentException("You can't upload file when RequestType is RequestType.TYPE_GET");
         if (requestType.toString().contains(Common.X_WWW_FORM_URLENCODED))

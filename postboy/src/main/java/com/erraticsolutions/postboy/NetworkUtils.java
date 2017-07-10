@@ -17,7 +17,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
-import java.util.HashMap;
 import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -31,7 +30,7 @@ class NetworkUtils {
     static final String BOUNDARY = "*****";
 
 
-    static String convertMapToGETString(HashMap<String,String> map) throws UnsupportedEncodingException{
+    static String convertMapToGETString(Map<String,String> map) throws UnsupportedEncodingException{
         if (map==null || map.size()==0)
             return "?";
             String getLink = "";
@@ -45,7 +44,7 @@ class NetworkUtils {
             return getLink;
     }
 
-    static String convertMapToPostXXXString(HashMap<String,String> map) throws UnsupportedEncodingException{
+    static String convertMapToPostXXXString(Map<String,String> map) throws UnsupportedEncodingException{
         if (map==null)
             return "";
             String getLink = "";
@@ -59,14 +58,14 @@ class NetworkUtils {
             return getLink;
     }
 
-    static void addHeadersToHttpURLConnection(HttpURLConnection conn,@Nullable HashMap<String, String> headers)
+    static void addHeadersToHttpURLConnection(HttpURLConnection conn,@Nullable Map<String, String> headers)
     {
         if (headers!=null)
             for (Map.Entry<String,String> entry: headers.entrySet())
                 conn.setRequestProperty(entry.getKey(),entry.getValue());
     }
 
-    static void addFilesToHttpURLConnection(HttpURLConnection conn, @Nullable HashMap<String,File> files) throws IOException
+    static void addFilesToHttpURLConnection(HttpURLConnection conn, @Nullable Map<String,File> files) throws IOException
     {
         if (files==null)
             return;
@@ -100,7 +99,7 @@ class NetworkUtils {
         }
     }
 
-    static void addFormDataPostToHttpURLConnection(HttpURLConnection conn,@Nullable HashMap<String, String> posts) throws IOException
+    static void addFormDataPostToHttpURLConnection(HttpURLConnection conn,@Nullable Map<String, String> posts) throws IOException
     {
         if (posts==null)
             return;
@@ -148,7 +147,6 @@ class NetworkUtils {
         try {
             int responseCode=conn.getResponseCode();
             String response;
-//            if (conn.getInputStream()!=null)
             if (responseCode >= HttpsURLConnection.HTTP_OK && responseCode<=299)
             {
                 String line;
